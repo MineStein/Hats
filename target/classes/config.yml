@@ -1,0 +1,15 @@
+messages:
+  dont_own: '&4&lX &cYou do not own this hat! Purchase it at &4&lhttp://rowlingsrealm.com/store'
+  no_permission: '&4&lX &cYou do not have permission for that!'
+  only_players: '&4&lX &cOnly players can do that!'
+  click_remove: '&eClick &7to remove'
+  hat_equipped: '&8(&bHats&8) &7Your &b$hat &7hat has been equipped.'
+  hat_dequipped: '&8(&bHats&8) &7Your &b$hat &7hat has been removed.'
+
+hats:
+  - name: '&bPickaxe'
+    description: '&3A beautiful pickaxe hat!'
+    permission: 'hats.pickaxe'
+    type: DIAMOND_PICKAXE
+    data: 0
+    damage: 0

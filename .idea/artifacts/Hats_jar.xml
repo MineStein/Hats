@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Hats:jar">
+    <output-path>$USER_HOME$/Desktop/Servers/Rowling's Realm Dev/plugins</output-path>
+    <root id="archive" name="Hats.jar">
+      <element id="module-output" name="Hats" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,51 @@
+package com.rowlingsrealm.hats.message;
+
+import com.rowlingsrealm.hats.HatsPlugin;
+import javafx.util.Pair;
+import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
+
+import java.util.Map;
+
+/**
+ * Copyright Tyler Grissom 2018
+ */
+public enum Message {
+
+    DONT_OWN,
+    NO_PERMISSION,
+    ONLY_PLAYERS,
+    CLICK_REMOVE,
+    HAT_EQUIPPED,
+    HAT_DEQUIPPED
+    ;
+
+    public String get() {
+        FileConfiguration config = HatsPlugin.instance.getConfig();
+
+        if (config.get("messages." + this.toString().toLowerCase()) == null) throw new IllegalArgumentException(String.format("No message entry at 'messages.%s'", this.toString().toLowerCase()));
+
+        String get = config.getString("messages." + this.toString().toLowerCase());
+
+        return ChatColor.translateAlternateColorCodes('&', get);
+    }
+
+    public String get(String key, String value) {
+        return get().replace("$" + key, value);
+    }
+
+    public String get(Pair<String, String> pair) {
+        return get().replace("$" + pair.getKey(), pair.getValue());
+    }
+
+    public String get(Map<String, String> map) {
+        String get = get();
+
+        for (Map.Entry<String, String> entry :
+                map.entrySet()) {
+            get = get.replace("$" + entry.getKey(), entry.getValue());
+        }
+
+        return get;
+    }
+}

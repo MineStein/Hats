@@ -1,0 +1,12 @@
+name: Hats
+version: 1.0.0
+main: com.rowlingsrealm.hats.HatsPlugin
+
+description: Hats for Rowlings Realm.
+website: http://rowlingsrealm.com
+authors: [Tyler Grissom]
+
+commands:
+  hats:
+    description: Open hats menu.
+    aliases: [hat]
